@@ -19,7 +19,11 @@ public class Correlations {
 
 public static  String ss = null;
 
+<<<<<<< HEAD
       public static double corcoeff(String str,String argument, String mirna, String target, String fname) throws IOException
+=======
+      public static double corcoeff(String str,String argument, String mirna, String target, String fname, double user_r) throws IOException
+>>>>>>> eef31af9f9e802e6552a63d7f2d7be03c5bdd5b5
             {
                 {
                 double cor_sub = 0;
@@ -119,7 +123,11 @@ public static  String ss = null;
                    // if(user_r)
                   // user_r
 
+<<<<<<< HEAD
       if(r< 0)
+=======
+      if(r >= user_r)
+>>>>>>> eef31af9f9e802e6552a63d7f2d7be03c5bdd5b5
                   {
       FileWriter f  = new FileWriter(fname,true);
                      BufferedWriter brw = new BufferedWriter(f);
@@ -136,6 +144,7 @@ public static  String ss = null;
             }
 
  public static void main(String[] args )throws IOException{
+<<<<<<< HEAD
       BufferedReader br1 = new BufferedReader(new FileReader("10kb_up_down_gene_rep"));
         String str1;
         while((str1=br1.readLine())!=null)
@@ -146,6 +155,41 @@ public static  String ss = null;
 
 	 StringBuilder gh = new StringBuilder();
          StringBuilder gh1 = new StringBuilder();
+=======
+
+    
+
+     if(args.length!=4)
+     {
+         corR = -1;
+     }
+     else
+     {
+         corR = Double.parseDouble(args[3]);
+     }
+
+      BufferedReader br1 = new BufferedReader(new FileReader(args[0]));
+        String str1;
+        while((str1=br1.readLine())!=null)
+        {   String[] a = str1.split("\t");
+
+             {
+
+
+            BufferedReader br2 = new BufferedReader(new FileReader(args[1]));
+        String str2;
+        while((str2=br2.readLine())!=null)
+        {
+            String[] b = str2.split("\t");
+        
+           {
+             // 
+                 //if(a[0].equalsIgnoreCase(b[0]))
+                 {
+                     //System.out.println(seprate[0]+"\t"+b[0]);
+                  StringBuilder gh = new StringBuilder();
+                     StringBuilder gh1 = new StringBuilder();
+>>>>>>> eef31af9f9e802e6552a63d7f2d7be03c5bdd5b5
                  for(int i=1;i<b.length;i++)
                     {
                                 gh.append(b[i]).append("\t");
@@ -155,6 +199,7 @@ public static  String ss = null;
                     {
                                 gh1.append(a[i]).append("\t");
                     }
+<<<<<<< HEAD
                     Correlations.corcoeff(gh.toString(), gh1.toString(),a[0],b[0],"correlation_bw_potato_gene_and_rep_mod_all_repeats");	
 
         }
@@ -162,4 +207,15 @@ br1.close();
 
 }
 }
+=======
+                    Correlations.corcoeff(gh.toString(), gh1.toString(),a[0],b[0],args[2],corR);
+            }
+            }
+}br2.close();
+        }
+}br1.close();
+    }
+
+}
+>>>>>>> eef31af9f9e802e6552a63d7f2d7be03c5bdd5b5
 
