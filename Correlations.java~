@@ -13,14 +13,14 @@ import java.util.concurrent.TimeUnit;
  *
  * @author ashwani
  */
-public class Correlations {
+public class cor {
 public static void main(String[] args) throws IOException
     {
     ArrayList<String> list = new ArrayList<String>();
 
 
- BufferedWriter bw = new BufferedWriter(new FileWriter(args[2]));
-    BufferedReader br = new BufferedReader(new FileReader(args[0]));
+ BufferedWriter bw = new BufferedWriter(new FileWriter("repeat_tf_expresion"));
+    BufferedReader br = new BufferedReader(new FileReader("repeat_tf_overlap_list"));
     String str;
     while((str=br.readLine())!=null)
     {
@@ -35,7 +35,7 @@ public static void main(String[] args) throws IOException
                         gh.append(d[ak1]).append("\t");
                     }
 
-    BufferedReader br1 = new BufferedReader(new FileReader(args[1]));
+    BufferedReader br1 = new BufferedReader(new FileReader("repeatmodeller_all_repeats_exp"));
     String str1;
     while((str1=br1.readLine())!=null)
     {
